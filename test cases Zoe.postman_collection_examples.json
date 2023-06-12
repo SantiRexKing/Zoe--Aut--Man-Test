@@ -1,0 +1,648 @@
+{
+	"info": {
+		"_postman_id": "e89cddde-ab4d-4b8c-94ba-ce0417be2385",
+		"name": "test cases Zoe",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19100975"
+	},
+	"item": [
+		{
+			"name": "Get user 8",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/8",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get user 8",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/8",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 23:29:14 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "997"
+						},
+						{
+							"key": "X-Ratelimit-Reset",
+							"value": "1686434077"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "max-age=43200"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"209-CXz5ZN8wf6UnQeLsUzX00Zh7L2g\""
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "HIT"
+						},
+						{
+							"key": "Age",
+							"value": "5734"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=BeLVlxXmmmh2sOmI2JHCgoHRetBj0qAyfg6e5QK%2FCLRboo%2FaUk6Aav8ISloKrTjZuu40Hr2ZHE08cZfuT20BWYXJXE%2B9Nr7mibe1qs3DETlkg7KDUyzlvNj%2Btax%2Bxri3NcMvQqgIYQsuZgkoX%2Bk%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7d556532ab7b3371-MIA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 8,\n    \"name\": \"Nicholas Runolfsdottir V\",\n    \"username\": \"Maxime_Nienow\",\n    \"email\": \"Sherwood@rosamond.me\",\n    \"address\": {\n        \"street\": \"Ellsworth Summit\",\n        \"suite\": \"Suite 729\",\n        \"city\": \"Aliyaview\",\n        \"zipcode\": \"45169\",\n        \"geo\": {\n            \"lat\": \"-14.3990\",\n            \"lng\": \"-120.7677\"\n        }\n    },\n    \"phone\": \"586.493.6943 x140\",\n    \"website\": \"jacynthe.com\",\n    \"company\": {\n        \"name\": \"Abernathy Group\",\n        \"catchPhrase\": \"Implemented secondary concept\",\n        \"bs\": \"e-enable extensible e-tailers\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "post new data with date",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();\r",
+							"currentDate.setHours(currentDate.getHours() - 5);\r",
+							"const dateISOString = currentDate.toISOString();\r",
+							"pm.variables.set(\"date\", dateISOString);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 101,\r\n    \"name\": \"Santiago Esteban Plazas\",\r\n    \"username\": \"Santi_Rex\",\r\n    \"email\": \"Santipl0899@hotmail.com\",\r\n    \"fecha\": \"{{date}}\",\r\n    \"address\": {\r\n        \"street\": \"calle \",\r\n        \"suite\": \"129\",\r\n        \"city\": \"bogota\",\r\n        \"zipcode\": \"220225\",\r\n        \"geo\": {\r\n            \"lat\": \"-12.99323\",\r\n            \"lng\": \"-140.2022\"\r\n        }\r\n    },\r\n    \"phone\": \"31562926008\",\r\n    \"website\": \"santire.com\",\r\n    \"company\": {\r\n        \"name\": \"zeo\",\r\n        \"catchPhrase\": \"let do it\",\r\n        \"bs\": \"not availble\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "post new data with date",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 101,\r\n    \"name\": \"Santiago Esteban Plazas\",\r\n    \"username\": \"Santi_Rex\",\r\n    \"email\": \"Santipl0899@hotmail.com\",\r\n    \"fecha\": \"{{date}}\",\r\n    \"address\": {\r\n        \"street\": \"calle \",\r\n        \"suite\": \"129\",\r\n        \"city\": \"bogota\",\r\n        \"zipcode\": \"220225\",\r\n        \"geo\": {\r\n            \"lat\": \"-12.99323\",\r\n            \"lng\": \"-140.2022\"\r\n        }\r\n    },\r\n    \"phone\": \"31562926008\",\r\n    \"website\": \"santire.com\",\r\n    \"company\": {\r\n        \"name\": \"zeo\",\r\n        \"catchPhrase\": \"let do it\",\r\n        \"bs\": \"not availble\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 23:31:54 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "487"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "999"
+						},
+						{
+							"key": "X-Ratelimit-Reset",
+							"value": "1686439957"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, X-HTTP-Method-Override, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "Access-Control-Expose-Headers",
+							"value": "Location"
+						},
+						{
+							"key": "Location",
+							"value": "http://jsonplaceholder.typicode.com/posts/101"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1e7-hivCZfTlF3ps+Tc291p7SMPP5mA\""
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=5DC9%2By91q3yWYPWafEHTiBO%2BGWVvqbAnvXqnDS41tQzPvtAA3mHN1ZvoYyGtPiPvXvdKMuUb5O0ywBn0cDWq9vxIVZCgBnSa9Uuxx6%2FFl2GYnCeipVzo2Mj8jeIk%2FhmcbTi0DzkNu82yALqPzbY%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7d5569199e883371-MIA"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 101,\n    \"name\": \"Santiago Esteban Plazas\",\n    \"username\": \"Santi_Rex\",\n    \"email\": \"Santipl0899@hotmail.com\",\n    \"fecha\": \"2023-06-10T18:31:53.206Z\",\n    \"address\": {\n        \"street\": \"calle \",\n        \"suite\": \"129\",\n        \"city\": \"bogota\",\n        \"zipcode\": \"220225\",\n        \"geo\": {\n            \"lat\": \"-12.99323\",\n            \"lng\": \"-140.2022\"\n        }\n    },\n    \"phone\": \"31562926008\",\n    \"website\": \"santire.com\",\n    \"company\": {\n        \"name\": \"zeo\",\n        \"catchPhrase\": \"let do it\",\n        \"bs\": \"not availble\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Put user 10 update data success",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"exec": [
+							"const currentDate = new Date();\r",
+							"currentDate.setHours(currentDate.getHours() - 5);\r",
+							"const dateISOString = currentDate.toISOString();\r",
+							"pm.variables.set(\"date\", dateISOString);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"userId\": 20,\r\n    \"id\": 300,\r\n    \"title\": \"number case 3\",\r\n    \"body\": \"update with put \",\r\n    \"date\":\"{{date}}\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/posts/10",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"posts",
+						"10"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Put user 10 update data success",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": 21,\r\n    \"id\": 17,\r\n    \"title\": \"number case 3\",\r\n    \"body\": \"update with put \",\r\n    \"date\":\"{{date}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/posts/10",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"posts",
+								"10"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 23:34:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "996"
+						},
+						{
+							"key": "X-Ratelimit-Reset",
+							"value": "1686440137"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"7e-p68a9xWd+Xst/YCgp/VLpcuN198\""
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=XXEfqoK7BdwGheDoq1aDrBxgAkzk8GRThqRbCsl5Xk3b7xOb6TlmFpGL8v18kkoNgkbFPfGeWmfVPzwvV9%2Bzrg7lhLjvJrwV%2B1kXJxP60oKtywu9%2Bc7NXaZ30C9lbRP3OzDJvDb7h87RLtIa37M%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7d556d93dbd13371-MIA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"userId\": 21,\n    \"id\": 10,\n    \"title\": \"number case 3\",\n    \"body\": \"update with put \",\n    \"date\": \"2023-06-10T18:34:56.605Z\"\n}"
+				}
+			]
+		},
+		{
+			"name": "put or patch user 8 only change the username",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"zoe-todaydate\",\r\n    \"username\": \"Maxime_Nienow\",\r\n    \"email\": \"Sherwood@rosamond.me\",\r\n    \"address\": {\r\n        \"street\": \"Ellsworth Summit\",\r\n        \"suite\": \"Suite 729\",\r\n        \"city\": \"Aliyaview\",\r\n        \"zipcode\": \"45169\",\r\n        \"geo\": {\r\n            \"lat\": \"-14.3990\",\r\n            \"lng\": \"-120.7677\"\r\n        }\r\n    },\r\n    \"phone\": \"586.493.6943 x140\",\r\n    \"website\": \"jacynthe.com\",\r\n    \"company\": {\r\n        \"name\": \"Abernathy Group\",\r\n        \"catchPhrase\": \"Implemented secondary concept\",\r\n        \"bs\": \"e-enable extensible e-tailers\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://jsonplaceholder.typicode.com/users/8",
+					"protocol": "https",
+					"host": [
+						"jsonplaceholder",
+						"typicode",
+						"com"
+					],
+					"path": [
+						"users",
+						"8"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "put or patch user 8 only change the username",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 8,\r\n    \"name\": \"zoe-todaydate\",\r\n    \"username\": \"Maxime_Nienow\",\r\n    \"email\": \"Sherwood@rosamond.me\",\r\n    \"address\": {\r\n        \"street\": \"Ellsworth Summit\",\r\n        \"suite\": \"Suite 729\",\r\n        \"city\": \"Aliyaview\",\r\n        \"zipcode\": \"45169\",\r\n        \"geo\": {\r\n            \"lat\": \"-14.3990\",\r\n            \"lng\": \"-120.7677\"\r\n        }\r\n    },\r\n    \"phone\": \"586.493.6943 x140\",\r\n    \"website\": \"jacynthe.com\",\r\n    \"company\": {\r\n        \"name\": \"Abernathy Group\",\r\n        \"catchPhrase\": \"Implemented secondary concept\",\r\n        \"bs\": \"e-enable extensible e-tailers\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://jsonplaceholder.typicode.com/users/8",
+							"protocol": "https",
+							"host": [
+								"jsonplaceholder",
+								"typicode",
+								"com"
+							],
+							"path": [
+								"users",
+								"8"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sat, 10 Jun 2023 23:36:38 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "X-Ratelimit-Limit",
+							"value": "1000"
+						},
+						{
+							"key": "X-Ratelimit-Remaining",
+							"value": "999"
+						},
+						{
+							"key": "X-Ratelimit-Reset",
+							"value": "1686440257"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin, Accept-Encoding"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "-1"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Etag",
+							"value": "W/\"1fe-qxfBaFJbrgP2uuVVWTk6kk7r/8U\""
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						},
+						{
+							"key": "CF-Cache-Status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Report-To",
+							"value": "{\"endpoints\":[{\"url\":\"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=lX%2FFPo62pmSw5R%2B6atkGXAXv2D32ZM6yfcpb1rMwQWhFdtndVX4rOUNcQs88Jd4tlbqzgBS38WgBv4oe5mfU8i2bcEvd%2F1WORDiwJBH62lnKcgvdXCuw9XPtMSry%2BT5j6VNoWtWU6X%2B79t%2FfPGU%3D\"}],\"group\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "NEL",
+							"value": "{\"success_fraction\":0,\"report_to\":\"cf-nel\",\"max_age\":604800}"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "7d55700a6c2e3371-MIA"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"id\": 8,\n    \"name\": \"zoe-todaydate\",\n    \"username\": \"Maxime_Nienow\",\n    \"email\": \"Sherwood@rosamond.me\",\n    \"address\": {\n        \"street\": \"Ellsworth Summit\",\n        \"suite\": \"Suite 729\",\n        \"city\": \"Aliyaview\",\n        \"zipcode\": \"45169\",\n        \"geo\": {\n            \"lat\": \"-14.3990\",\n            \"lng\": \"-120.7677\"\n        }\n    },\n    \"phone\": \"586.493.6943 x140\",\n    \"website\": \"jacynthe.com\",\n    \"company\": {\n        \"name\": \"Abernathy Group\",\n        \"catchPhrase\": \"Implemented secondary concept\",\n        \"bs\": \"e-enable extensible e-tailers\"\n    }\n}"
+				}
+			]
+		}
+	]
+}
