@@ -1,0 +1,23 @@
+Findings:
+
+During the test automation on "Zoe Reschedule", timeout issues and selector errors were identified. It was necessary to adjust timeouts and correct selectors to address these issues.
+
+During the test, two important aspects were identified in the scheduling functionality of "Zoe Reschedule". Firstly, it was observed that it was possible to schedule appointments on Sundays, which may be considered an undesired behavior according to the system requirements.
+Secondly, it was noted that there was no time restriction, as appointments could be successfully scheduled until 10pm, which may not align with the established business rules.
+
+
+During the execution of the automated test on "Zoe Reschedule", HTTP server response errors with status codes 418, 423, and 425 were encountered. These errors prevented the test from proceeding correctly as they indicated unexpected situations in the communication between the client and the server.
+Additionally, it was identified that certain elements in the calendar section exhibited unexpected behavior. Specifically, these elements would reload twice, making it impossible to select them properly on the first attempt. To address this issue, adjustments were made to the parameters and configurations in Cypress.
+These findings highlight the need to investigate and address the underlying causes of the server response errors and the unexpected calendar behavior to ensure stability and proper functionality of the "Zoe Reschedule" website.
+
+
+
+Hallazgos:
+
+Durante la automatización de la prueba en "Zoe Reschedule", se identificaron problemas de tiempo de espera y errores en los selectores. Fue necesario ajustar los tiempos de espera y corregir los selectores para solucionar estos problemas.
+
+Durante la prueba, se identificaron dos aspectos importantes en la funcionalidad de programación de citas en "Zoe Reschedule". En primer lugar, se observó que era posible programar citas los domingos, lo cual puede considerarse un comportamiento no deseado según los requisitos del sistema. En segundo lugar, se constató que no existía una restricción horaria, ya que se podían programar citas exitosamente hasta las 10 pm, lo cual podría no estar alineado con las reglas de negocio establecidas.
+
+Durante la ejecución de la prueba automatizada en "Zoe Reschedule", se encontraron errores de respuesta del servidor HTTP con los códigos de estado 418, 423 y 425. Estos errores impidieron que la prueba continuara correctamente, ya que indicaban situaciones inesperadas en la comunicación entre el cliente y el servidor. Además, se identificó que ciertos elementos de la sección del calendario presentaban un comportamiento inesperado. Específicamente, estos elementos se recargaban dos veces, lo que dificultaba su selección en el primer intento. Para abordar este problema, se realizaron ajustes en los parámetros y configuraciones en Cypress.
+
+Estos hallazgos resaltan la necesidad de investigar y abordar las causas subyacentes de los errores de respuesta del servidor y el comportamiento inesperado del calendario para garantizar la estabilidad y la correcta funcionalidad del sitio web "Zoe Reschedule".
